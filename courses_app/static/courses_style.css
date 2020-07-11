@@ -23,11 +23,10 @@ table {
 }
 
 
-tr td th{
+tr, td, th{
     outline: 1px solid black;
-
-    
 }
+
 .verify p h1{
     margin: 10px auto;
     width: 600px;
