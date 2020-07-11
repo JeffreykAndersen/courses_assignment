@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'courses_style.css'%}">
+    <title>Delete</title>
+</head>
+<body>
+    <div id="verify">
+        <h1>Are you sure you want to deleate the following course?</h1>
+        <p><b>Name: </b>{{this_course.name}}</p>
+        <p><b> Description: </b>{{this_course.desc}}</p>
+    </div>  
+    <form action="/" method="GET">
+        {% csrf_token %}
+        <input type="submit" name="no" id="no" value="No">
+    </form>
+    <form action="/verify/{{this_course.id}}" method="POST">
+        {% csrf_token %}
+        <input type="submit" name="yes" id="yes" value="Yes I want to deleate it">
+    </form>
+</body>
+</html>
